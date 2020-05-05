@@ -25,7 +25,7 @@ if (isset($_POST['ajouter'])) {
     <!-- BOOTSTRAP 4 -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <!-- FONT AWESOEM -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
   </head>
   <body>
 
@@ -71,7 +71,7 @@ if (isset($_POST['ajouter'])) {
             <td>
               <button type="button" class="btn btn-secondary editbtn"><i class="fas fa-marker"></i></button>
               <a href="index.php?id=<?php echo $row['id']?>" class="btn btn-danger">
-                <i class="far fa-trash-alt"></i>
+                <i class="fas fa-trash-alt"></i>
               </a>
             </td>
           </tr>
@@ -119,7 +119,7 @@ if (isset($_POST['ajouter'])) {
 </div>
 <!-- BOOTSTRAP 4 SCRIPTS -->
 <script src="jquery/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="popper/popper.min.js" ></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
