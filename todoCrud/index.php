@@ -14,6 +14,16 @@ if (isset($_POST['ajouter'])) {
 
 }
 
+//Edit
+if (isset($_POST['update'])) {
+  $id = $_POST['id'];
+  $title= $_POST['title'];
+  $description = $_POST['description'];
+  $query = "UPDATE task set title = '$title', description = '$description' WHERE id=$id";
+  mysqli_query($conn, $query);
+   $successMessage= 'Tache n°'.$id.' modifiée avec succés';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -110,6 +120,38 @@ if (isset($_POST['ajouter'])) {
           <input type="submit" name="ajouter" class="btn btn-success btn-block" value="Enregistrer">
         </form>
       </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- edit -->
+<div class="modal fade" id="editPopUp" tabindex="-1" role="dialog" aria-labelledby="editPopUpTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modification d'une tâche</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <div class="card card-body">
+            <form action="" method="POST">
+              <input type="hidden" name="id" id="id">
+             <div class="form-group">
+              <input type="text" name="title" id="title" class="form-control" placeholder="Titre de la tâche">
+            </div>
+          <div class="form-group">
+            <textarea name="description" id="description" rows="2" class="form-control" placeholder="Déscription de la tâche"></textarea>
+          </div>
+          <input type="submit" name="update" class="btn btn-success btn-block" value="Enregistrer">
+            </form>
             </div>
           </div>
         </div>
