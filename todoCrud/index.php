@@ -24,6 +24,17 @@ if (isset($_POST['update'])) {
    $successMessage= 'Tache n°'.$id.' modifiée avec succés';
 }
 
+//Delete
+if(isset($_GET['id'])) {
+  $id = $_GET['id'];
+  $query = "DELETE FROM task WHERE id = $id";
+  $result = mysqli_query($conn, $query);
+  if(!$result) {
+    die("Query Failed.");
+  }
+
+  $errorMessage= 'Tache n°'.$id.' supprimée avec succés';
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,14 +60,24 @@ if (isset($_POST['update'])) {
   <div class="row">
     <div class="col-md-8 offset-md-2">
             <!-- MESSAGES -->
-      <?php if(isset($successMessage)){ ?>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <?php echo $successMessage; ?>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <?php } ?>
+          <?php 
+              if(isset($successMessage)){ ?>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo $successMessage; ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <?php }elseif (isset($errorMessage)) { ?>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?php echo $errorMessage; ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <?php
+            } 
+        ?>
           </div>
     <div class="col-md-8 offset-md-2">
       <table class="table table-bordered">
