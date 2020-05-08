@@ -33,13 +33,13 @@
 		<hr class="bg-info">	
 		  <!-- MESSAGES -->
 		  	<div class="alert alert-danger" role="alert" v-if="errorMessage">
-                errorMessage
+                {{ errorMessage }}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="alert alert-success" role="alert" v-if="successMessage">
-	            successMessage
+	            {{ successMessage }}
 	            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	              <span aria-hidden="true">&times;</span>
 	            </button>
@@ -59,35 +59,11 @@
             				</tr>
             			</thead>
             			<tbody>
-            				<tr class="text-center">
-            					<td>1</td>
-            					<td>tokosel</td>
-            					<td>tokosel@gmail.com</td>
-            					<td>774640304</td>
-            					<td><a href="#" class="text-warning" @click="showEditModel=true"><i class="fas fa-edit"></i></a></td>
-            					<td><a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a></td>
-            				</tr>
-            				<tr class="text-center">
-            					<td>1</td>
-            					<td>tokosel</td>
-            					<td>tokosel@gmail.com</td>
-            					<td>774640304</td>
-            					<td><a href="#" class="text-warning" @click="showEditModel=true"><i class="fas fa-edit"></i></a></td>
-            					<td><a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a></td>
-            				</tr>
-            				<tr class="text-center">
-            					<td>1</td>
-            					<td>tokosel</td>
-            					<td>tokosel@gmail.com</td>
-            					<td>774640304</td>
-            					<td><a href="#" class="text-warning" @click="showEditModel=true"><i class="fas fa-edit"></i></a></td>
-            					<td><a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a></td>
-            				</tr>
-            				<tr class="text-center">
-            					<td>1</td>
-            					<td>tokosel</td>
-            					<td>tokosel@gmail.com</td>
-            					<td>774640304</td>
+            				<tr class="text-center" v-for="user in users">
+            					<td>{{ user.id }}</td>
+            					<td>{{ user.name }}</</td>
+            					<td>{{ user.email }}</</td>
+            					<td>{{ user.phone }}</</td>
             					<td><a href="#" class="text-warning" @click="showEditModel=true"><i class="fas fa-edit"></i></a></td>
             					<td><a href="#" class="text-danger" @click="showDeleteModel=true"><i class="fas fa-trash-alt"></i></a></td>
             				</tr>
@@ -112,16 +88,16 @@
 		      <div class="modal-body">
 	            <form action="" method="POST">
 		          <div class="form-group">
-		            <input type="text" name="name" class="form-control" placeholder="Nom de l'utilisateur" autofocus>
+		            <input type="text" name="name" class="form-control" placeholder="Nom de l'utilisateur" v-model="newUser.name">
 		          </div>
 		          <div class="form-group">
-		            <input type="email" name="email" class="form-control" placeholder="Email de l'utilisateur" autofocus>
+		            <input type="email" name="email" class="form-control" placeholder="Email de l'utilisateur" v-model="newUser.email">
 		          </div>
 		          <div class="form-group">
-		            <input type="tel" name="phone" class="form-control" placeholder="Téléphone de l'utilisateur" autofocus>
+		            <input type="tel" name="phone" class="form-control" placeholder="Téléphone de l'utilisateur" v-model="newUser.phone">
 		          </div>
 		          <div class="form-group">
-		            <input type="submit" name="ajouter" class="btn btn-info btn-block" value="Enregistrer" @click="showAddModel=false">
+		            <input type="submit" name="create" class="btn btn-info btn-block" value="Enregistrer" @click="showAddModel=false; addUser();">
 		          </div>
 		          
 		        </form>
@@ -196,6 +172,7 @@
 <!-- BOOTSTRAP 4 SCRIPTS -->
 <script src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script type="text/javascript" src="main.js"></script>
 </body>
