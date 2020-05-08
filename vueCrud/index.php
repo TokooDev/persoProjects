@@ -4,9 +4,9 @@
 	<title>CRUD With VUE JS</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- BOOTSTRAP 4 -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- FONT AWESOEM -->
-    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -22,11 +22,11 @@
 		<div class="container">
 			<div class="row mt-3">
 				<div class="col-lg-8 md-8 sm-12">
-					<h3 class="text-info"><i class="fas fa-list"></i>&nbsp;Liste des utilisateurs</h3>
+					<h3 class="text-info"><i class="fa fa-list"></i>&nbsp;Liste des utilisateurs</h3>
 				</div>
 				<div class="col-lg-4 md-8 sm-12">
 					<button class="btn btn-info float-right" @click="showAddModel=true">
-						<i class="fas fa-user"></i>&nbsp;&nbsp;Ajouter un utilisateur
+						<i class="fa fa-user"></i>&nbsp;&nbsp;Ajouter un utilisateur
 					</button>
 				</div>
 			</div>
@@ -64,8 +64,8 @@
             					<td>{{ user.name }}</</td>
             					<td>{{ user.email }}</</td>
             					<td>{{ user.phone }}</</td>
-            					<td><a href="#" class="text-warning" @click="showEditModel=true;selectUser(user);"><i class="fas fa-edit"></i></a></td>
-            					<td><a href="#" class="text-danger" @click="showDeleteModel=true;selectUser(user);"><i class="fas fa-trash-alt"></i></a></td>
+            					<td><a href="#" class="text-warning" @click="showEditModel=true;selectUser(user);"><i class="fa fa-edit"></i></a></td>
+            					<td><a href="#" class="text-danger" @click="showDeleteModel=true;selectUser(user);"><i class="fa fa-trash-o"></i></a></td>
             				</tr>
             			</tbody>
             			
@@ -170,8 +170,9 @@
 	</div>
 
 <!-- BOOTSTRAP 4 SCRIPTS -->
-<script src="jquery/jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script type="text/javascript" src="main.js"></script>
