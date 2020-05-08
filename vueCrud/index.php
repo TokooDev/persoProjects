@@ -64,8 +64,8 @@
             					<td>{{ user.name }}</</td>
             					<td>{{ user.email }}</</td>
             					<td>{{ user.phone }}</</td>
-            					<td><a href="#" class="text-warning" @click="showEditModel=true"><i class="fas fa-edit"></i></a></td>
-            					<td><a href="#" class="text-danger" @click="showDeleteModel=true"><i class="fas fa-trash-alt"></i></a></td>
+            					<td><a href="#" class="text-warning" @click="showEditModel=true;selectUser(user);"><i class="fas fa-edit"></i></a></td>
+            					<td><a href="#" class="text-danger" @click="showDeleteModel=true;selectUser(user);"><i class="fas fa-trash-alt"></i></a></td>
             				</tr>
             			</tbody>
             			
@@ -118,16 +118,16 @@
 		      <div class="modal-body">
 	            <form action="" method="POST">
 		          <div class="form-group">
-		            <input type="text" name="name" class="form-control" placeholder="Nom de l'utilisateur" autofocus>
+		            <input type="text" name="name" class="form-control" v-model="currentUser.name">
 		          </div>
 		          <div class="form-group">
-		            <input type="email" name="email" class="form-control" placeholder="Email de l'utilisateur" autofocus>
+		            <input type="email" name="email" class="form-control" v-model="currentUser.email">
 		          </div>
 		          <div class="form-group">
-		            <input type="tel" name="phone" class="form-control" placeholder="Téléphone de l'utilisateur" autofocus>
+		            <input type="tel" name="phone" class="form-control" v-model="currentUser.phone">
 		          </div>
 		          <div class="form-group">
-		            <input type="submit" name="update" class="btn btn-info btn-block" value="Modifier" @click="showEditModel=false">
+		            <input type="submit" name="update" class="btn btn-info btn-block" value="Modifier" @click="showEditModel=false;updateUser();">
 		          </div>
 		          
 		        </form>
