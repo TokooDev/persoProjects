@@ -97,7 +97,7 @@
 		            <input type="tel" name="phone" class="form-control" placeholder="Téléphone de l'utilisateur" v-model="newUser.phone">
 		          </div>
 		          <div class="form-group">
-		            <input type="submit" name="create" class="btn btn-info btn-block" value="Enregistrer" @click="showAddModel=false; addUser();">
+		            <input type="submit" name="create" class="btn btn-info btn-block" value="Enregistrer" @click="showAddModel=false; addUser();clearMessage();">
 		          </div>
 		          
 		        </form>
@@ -127,7 +127,7 @@
 		            <input type="tel" name="phone" class="form-control" v-model="currentUser.phone">
 		          </div>
 		          <div class="form-group">
-		            <input type="submit" name="update" class="btn btn-info btn-block" value="Modifier" @click="showEditModel=false;updateUser();">
+		            <input type="submit" name="update" class="btn btn-info btn-block" value="Modifier" @click="showEditModel=false;updateUser();clearMessage();">
 		          </div>
 		          
 		        </form>
@@ -150,10 +150,10 @@
 		          <div class=" row form-group">
 		          	<div class="col-lg-12  mb-4">
 		          		<h5 class="text-danger text-center">Etes-vous sûr(e) de vouloir supprimer ?</h5>
-		          		<h6 class="text-center">Vous êtes entrain de supprimer 'tokosel'</h6>
+		          		<h6 class="text-center">Vous êtes entrain de supprimer '{{ currentUser.name }}'</h6>
 		          	</div>
 		          	<div class="col-lg-6 offset-2">
-		          		<input type="submit" name="delete" class="btn btn-danger" value="Oui" @click="showDeleteModel=false">
+		          		<input type="submit" name="delete" class="btn btn-danger" value="Oui" @click="showDeleteModel=false;deleteUser();clearMessage();">
 		          	</div>
 		            <div class="col-lg-2">
 		          		<input type="submit" name="delete" class="btn btn-info" value="Non" @click="showDeleteModel=false">

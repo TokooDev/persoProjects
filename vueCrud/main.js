@@ -50,6 +50,19 @@ var app = new Vue({
 				}
 			});
 		},
+		//Suppression
+		deleteUser(){
+			var formData = app.toFormData(app.currentUser);
+			axios.post("http://localhost/persoProjects/vueCrud/process.php?action=delete", formData).then(function(response){
+				app.currentUser = {};
+				if (response.data.error) {
+					app.errorMessage= response.data.message;
+				}else{
+					app.successMessage= response.data.message;
+					app.getAllUsers();
+				}
+			});
+		},
 		toFormData(obj){
 			var fd = new FormData();
 			for (var i in obj) {
@@ -59,6 +72,10 @@ var app = new Vue({
 		},
 		selectUser(user){
 			app.currentUser = user;
+		},
+		clearMessage(){
+			app.errorMessage= "";
+			app.successMessage= "";
 		}
 	}
 });
