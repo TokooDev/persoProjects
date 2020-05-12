@@ -1,7 +1,7 @@
 # persoProjects
 Dans ce repot je mets tous mes projets personnels sur les technos que j'approuve au fil du temps.
 
-#1-Un simple todo-liste
+# 1-Un simple todo-liste
 Technos: 
 	-Html 
 	-Php / MySQL 
@@ -9,7 +9,7 @@ Technos:
 
 L'objectif final c'est d'implémenter un crud de AZ
 
-#2-Gestion d'utilisateurs
+# 2-Gestion d'utilisateurs
 Technos: 
 	-Html
 	-PHP / MySQL 
@@ -18,7 +18,7 @@ Technos:
 
 L'objectif de ce petit projet est de prendre en vue principale
 
-#3-Gestion des vols avion
+# 3-Gestion des vols avion
 Technos: 
 	-PHP / MySQL 
 	-Json 
